@@ -1,4 +1,9 @@
-# Wallcli
+wallblog-ember
+==============
+
+Wallblog built with embercl
+
+
 
 This README outlines the details of collaborating on this Ember application.
 
