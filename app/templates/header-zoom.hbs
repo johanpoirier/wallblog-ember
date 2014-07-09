@@ -1,0 +1,24 @@
+<header>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+            {{#link-to 'items' class="navbar-brand"}}
+                <img src="img/logo_m.png" alt="Logo" />
+            {{/link-to}}
+            <span class="date">{{format-date date 'D MMMM YYYY'}}</span>
+            <span class="description">
+            {{#if isEditing}}
+                : {{input type="text" name="description" value=model.description placeholderTranslation="enterDescription" size="40" focus-out="unedit" action="update"}}
+            {{else}}
+                : <span {{action "edit" on="doubleClick"}}>
+                    {{#if description}} {{description}} {{else}} {{t addDescription}} {{/if}}
+                </span>
+            {{/if}}
+            </span>
+        {{#if controllers.application.isLogged}}
+            <span class="delete" style="display: inline;" {{action "delete"}}>
+                {{t 'deletePicture'}}
+            </span>
+        {{/if}}
+        </div>
+    </div>
+</header>

@@ -1,0 +1,16 @@
+<form>
+    {{view 'textarea' name="text" class="form-control" placeholderTranslation="anyComment" valueBinding=view.text rows=view.nbRows tabindex="1"}}
+
+    <div {{bind-attr class="view.isExpanded::hidden"}}>
+        <span class="help-inline"></span>
+        {{input type="text" class="form-control" name="author" value=view.author placeholderTranslation="authorHint" tabindex="2" }}
+
+        <button type="button" class="btn" tabindex="4" {{action "contract" on="click" target="view"}}>
+            {{t 'cancel'}}
+        </button>
+        <button type="submit" class="btn btn-success" tabindex="3" {{action "submitComment" on="click" target="view"}}>
+            <i class="icon-ok icon-white"></i>
+            {{t 'submitComment'}}
+        </button>
+    </div>
+</form>

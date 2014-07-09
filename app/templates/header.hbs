@@ -1,0 +1,15 @@
+<header>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+            {{#link-to 'items' class="navbar-brand"}}
+                <img src="img/logo_m.png" alt="Logo" />
+                <img alt="{{unbound title}}" src="img/titre.png" />
+            {{/link-to}}
+            <p class="info pull-right">{{nbItems}} {{t 'picturesToClickAndComment'}}</p>
+            <div class="filter">{{t 'filter'}}</div>
+            <img alt="Admin" title="Ajout de photos, modération des commentaires"
+            src="img/admin.png" {{bind-attr class=":admin controllers.application.isLogged:hidden"}} {{action 'openModal' 'login'}} />
+            <img alt="Upload" title="Ajout de photos" src="img/upload.png" {{bind-attr class=":upload controllers.application.isLogged::hidden"}} />
+        </div>
+    </div>
+</header>
